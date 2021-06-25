@@ -18,6 +18,8 @@ int rowSize = rowsData.size();
 def firstname = rowsData[randomizer.nextInt(rowSize)];
 def lastname = rowsData[randomizer.nextInt(rowSize)];
 def mailName = rowsData[randomizer.nextInt(rowSize)];
+def phoneNumber = Math.abs( randomizer.nextInt() % (10000000 - 99999999) ) + 10000000;
 
 context.testCase.setPropertyValue("Name", lastname + " " + firstname);
 context.testCase.setPropertyValue("Email", mailName + "@example.org");
+context.testCase.setPropertyValue("Phone", phoneNumber.toString());
